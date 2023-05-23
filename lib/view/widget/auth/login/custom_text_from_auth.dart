@@ -7,6 +7,8 @@ class CustomTextFromAuth extends StatelessWidget {
   final String hinText;
   final String labelText;
   final Widget iconSuffix;
+   Widget? suffixIcon;
+
   final TextEditingController myController;
   final  FormFieldValidator<String>? validator;
     TextInputType? keyboardType;
@@ -18,7 +20,7 @@ class CustomTextFromAuth extends StatelessWidget {
     required this.myController,
       this.keyboardType,
      this.validator,
-    this.showPassword=false,
+    this.showPassword=false,  this.suffixIcon,
   }) : super(key: key);
 
   @override
@@ -38,6 +40,7 @@ class CustomTextFromAuth extends StatelessWidget {
       child:  Text(labelText)
       ),
       prefixIcon:  iconSuffix,
+      suffixIcon: suffixIcon,
       hintText: hinText,
       hintStyle: const TextStyle(
       fontSize: 14,

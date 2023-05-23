@@ -7,6 +7,7 @@ class AppImageAsset
   static const String  image_2 = "$rootImages/bottom_img_1.png";
   static const String loading = "$rootLottie/loading1.json";
   static const String offline = "$rootLottie/offline.json";
+  static const String notResult = "$rootLottie/not_result.json";
   static const String loadingAuth = "$rootLottie/loding_auth.json";
   static const String noData = "$rootLottie/nodata.json";
   static const String server = "$rootLottie/server.json";

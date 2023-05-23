@@ -3,8 +3,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/constant/color.dart';
-
 class CustomButtonAuth extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
@@ -17,7 +15,7 @@ class CustomButtonAuth extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         padding:const  EdgeInsets.symmetric(vertical: 13),
           onPressed: onPressed,
-         color: AppColor.primaryColor,
+         color: Colors.red,
           child:Text(
             text,
           style:const  TextStyle(

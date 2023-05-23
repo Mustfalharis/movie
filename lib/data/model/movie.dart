@@ -6,11 +6,12 @@ class MoiveModel {
   String? moiveDes;
   double? moiveRating;
   String? moiveProducer;
-  String? moiveCreate;
+  dynamic moiveCreate;
   String? moiveImage;
   String? moiveLink;
   int? categoryId;
   String? categoryName;
+  int? favorite;
   MoiveModel.fromJson(Map<String, dynamic> json) {
     moiveId = json['moive_id'];
     moiveName = json['moive_name'];
@@ -23,5 +24,6 @@ class MoiveModel {
     moiveLink = json['moive_link'];
     categoryId = json['category_id'];
     categoryName = json['category_name'];
+    favorite = json['favorite'];
   }
 }

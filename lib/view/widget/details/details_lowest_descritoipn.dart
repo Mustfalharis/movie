@@ -28,7 +28,7 @@ class DetailsLowestDescription extends GetView<DetailsControllerImp>  {
                 ),
               ),
               Text(
-                controller.movieModel!.moiveCreate!,
+                controller.movieModel!.moiveCreate!.toString(),
                 style: Theme.of(context)
                     .textTheme
                     .subtitle2!

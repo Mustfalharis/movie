@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 validInput(String val, int min, int max, String type) {
   if (type == "username") {
     if (!GetUtils.isUsername(val)) {
-      return "43".tr;
+      return "Not Empty userName".tr;
     }
   }
   if (type == "email") {
     if (!GetUtils.isEmail(val)) {
-      return "44".tr;
+      return "Not Empty Email".tr;
     }
   }
 
@@ -19,7 +19,7 @@ validInput(String val, int min, int max, String type) {
   }
 
   if (val.isEmpty) {
-    return "46".tr;
+    return "Not Empty".tr;
   }
 
   if (val.length < min) {

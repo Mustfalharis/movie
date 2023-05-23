@@ -4,22 +4,22 @@ import 'package:movies_app/link_api.dart';
 class HomeData{
   Crud card;
   HomeData(this.card);
-  getData()async
+  getData(String userId)async
   {
      var response = await card.postData(
          AppLink.home,
          {
-
+          'userId':userId,
          }
      );
      return response.fold((l) => l, (r) => r);
   }
-  getDataCat()async
+  getDataCat(String userId)async
   {
     var response = await card.postData(
         AppLink.home,
         {
-
+          'userId':userId,
         }
     );
     return response.fold((l) => l, (r) => r);

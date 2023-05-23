@@ -1,8 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:store_getx/core/constant/color.dart';
-
 class CustomTextSingUpOrSingIn extends StatelessWidget {
    final String textOne;
    final String textTwo;
@@ -21,7 +19,7 @@ class CustomTextSingUpOrSingIn extends StatelessWidget {
           child:  Text(
             textTwo,
             style: const TextStyle(
-              color: AppColor.primaryColor,
+              color: Colors.red,
               fontWeight: FontWeight.bold,
             ),
           ),

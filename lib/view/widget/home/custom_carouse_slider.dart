@@ -3,13 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
+import 'package:movies_app/controller/favorite_controller.dart';
 import 'package:movies_app/controller/home_controller.dart';
 import 'package:movies_app/core/class/hindling_data_view.dart';
 import 'package:movies_app/link_api.dart';
 
 class CustomCarouseSlider extends GetView<HomeControllerImp> {
   const CustomCarouseSlider({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return HandlingDataView(
@@ -20,7 +20,7 @@ class CustomCarouseSlider extends GetView<HomeControllerImp> {
             (BuildContext context, int index, int pageViewIndex) {
           return InkWell(
             onTap: (){
-              controller.gotToDetails(controller.dataSlide[index]);
+              controller.gotToDetails(controller.dataSlide[index].moiveId.toString());
             },
             child: Stack(
               alignment: Alignment.bottomLeft,

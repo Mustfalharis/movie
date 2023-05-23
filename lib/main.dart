@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movies_app/routes.dart';
 import 'bindings/intial_bindings.dart';
+import 'core/class/check_user.dart';
 import 'core/services/services.dart';
 
 void main() async {

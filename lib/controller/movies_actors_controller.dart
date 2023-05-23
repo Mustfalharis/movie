@@ -9,7 +9,7 @@ import '../data/model/actors.dart';
 abstract class MoviesActorsController extends GetxController
 {
   getDataMovies();
-  gotToDetails(MoiveModel movieModel);
+  gotToDetails(String id);
 }
 class MoviesActorsControllerImp extends MoviesActorsController {
   MoviesActorsData moviesActorsData = MoviesActorsData(Get.find());
@@ -46,9 +46,9 @@ class MoviesActorsControllerImp extends MoviesActorsController {
   }
 
   @override
-  gotToDetails(MoiveModel movieModel) {
+  gotToDetails(String id) {
     Get.toNamed(AppRoute.details, arguments: {
-      "movieModel": movieModel,
+      "movieId": id,
     });
   }
 }

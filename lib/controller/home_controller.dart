@@ -6,12 +6,13 @@ import '../core/constant/routes.dart';
 import '../core/functions/handing_data_controller.dart';
 import '../data/model/category.dart';
 import '../data/model/movie.dart';
+import 'favorite_controller.dart';
 abstract class HomeController extends GetxController
 {
   getDataSliderAndCategory();
   changSelectedCategory(int index);
   getDataItems();
-  gotToDetails(MoiveModel movieModel);
+  gotToDetails(String id);
 }
 class HomeControllerImp extends HomeController{
   HomeData? homeData=HomeData(Get.find());
@@ -26,7 +27,7 @@ class HomeControllerImp extends HomeController{
   {
     statusRequest=StatusRequest.loading;
     update();
-    var response = await  homeData!.getData();
+    var response = await  homeData!.getData("1");
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
    if(StatusRequest.success==statusRequest) {
@@ -35,6 +36,7 @@ class HomeControllerImp extends HomeController{
        dataSlide.addAll(temp.map((e) => MoiveModel.fromJson(e)));
        List tempTwo = response['data']['category'];
        datCategory.addAll(tempTwo.map((e) => CategoryModel.fromJson(e)));
+
      }
      else {
        statusRequest = StatusRequest.failure;
@@ -76,9 +78,9 @@ class HomeControllerImp extends HomeController{
     }
   }
   @override
-  gotToDetails(MoiveModel movieModel) {
+  gotToDetails(String id) {
    Get.toNamed(AppRoute.details,arguments: {
-     "movieModel":movieModel,
+     "movieId":id,
    });
   }
  }

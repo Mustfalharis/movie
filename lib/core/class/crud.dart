@@ -7,7 +7,6 @@ class Crud
 {
   Future<Either<StatusRequest,Map>>postData(String linkUrl,Map data)async
   {
-
     try
     {
       if(await checkInternet()==true)
@@ -16,6 +15,7 @@ class Crud
         if(response.statusCode==200||response.statusCode==201)
         {
           Map responseBody=jsonDecode(response.body);
+          print(data.toString());
           return Right(responseBody);
         }
         else

@@ -34,7 +34,7 @@ class ListItemsMoive extends GetView<HomeControllerImp> {
   InkWell buildItems(int index) {
     return InkWell(
       onTap: (){
-        controller.gotToDetails(controller.dataItems[index]);
+        controller.gotToDetails(controller.dataItems[index].moiveId.toString());
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

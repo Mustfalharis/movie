@@ -15,10 +15,7 @@ class ListActorsInMovie extends GetView<DetailsControllerImp> {
     return Container(
       height: 150,
       padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: GetBuilder<DetailsControllerImp>(
-        builder: (controller)=>HandlingDataView(
-          statusRequest: controller.statusRequest,
-          widget: ListView.separated(
+      child:ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context,index)=>Container(
                 alignment: Alignment.topLeft,
@@ -74,8 +71,6 @@ class ListActorsInMovie extends GetView<DetailsControllerImp> {
               separatorBuilder: (context, index) => const SizedBox(width: 5,),
               itemCount: controller.actorsMovie.length
           ),
-        ),
-      ),
-    );
+        );
   }
 }

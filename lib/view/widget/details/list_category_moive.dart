@@ -14,10 +14,7 @@ class ListCategoryInMovie extends GetView<DetailsControllerImp> {
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: SizedBox(
         height: 30,
-        child: GetBuilder<DetailsControllerImp>(
-          builder: (controller)=>HandlingDataView(
-          statusRequest: controller.statusRequest,
-          widget: ListView.separated(
+        child: ListView.separated(
                 itemCount: controller.categoryMovie.length,
                 separatorBuilder: (context, index) => const SizedBox(width: 10),
                 scrollDirection: Axis.horizontal,
@@ -25,9 +22,7 @@ class ListCategoryInMovie extends GetView<DetailsControllerImp> {
                   return buildCategory(index);
                 }),
           ),
-        ),
-      ),
-    );
+        );
   }
 
   Container buildCategory(int index) {
